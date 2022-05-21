@@ -11,6 +11,9 @@ TowNumberSum sum = new TowNumberSum();
 
 int[] arr = new int[] { 1, 12, -3, 23, 15, 6, -7, 8, 11 };
 int n = 20;
-sum.TwoNumberSum(arr, n);
+//sum.TwoNumberSum(arr, n);
 
-sum.TwoNumberSumHashSet(arr, n);
+//sum.TwoNumberSumHashSet(arr, n);
+
+sum.TowNumberSumTwoSide(arr, n);
+

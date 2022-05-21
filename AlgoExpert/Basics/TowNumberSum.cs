@@ -52,5 +52,31 @@ namespace AlgoExpert.Basics
                 hashSet.Add(item);
             }
         }
+
+        public void TowNumberSumTwoSide(int[] arr, int targetSum)
+        {
+            Array.Sort(arr);
+            int left = 0;
+            int right = arr.Length - 1;
+
+            while (left < right)
+            {
+                int curretnsum = arr[left] + arr[right];
+                if (curretnsum == targetSum)
+                {
+                    int[] result = new int[] { arr[left], arr[right] };
+                    foreach (var rs in result)
+                    {
+                        Console.Write(rs + " -- ");
+                    }
+                    return;
+                }
+                else if (curretnsum < targetSum) left++;
+                else right--;
+            }
+
+        }
+
+    
     }
 }
