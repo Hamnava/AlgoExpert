@@ -16,7 +16,7 @@ namespace AlgoExpert.Basics
             {
                 for (int i = 0; i < arr.Length; i++)
                 {
-                    for (int j = 0; j < arr.Length; j++)
+                    for (int j = i+1; j < arr.Length; j++)
                     {
                         if (arr[i] + arr[j] == n)
                         {
@@ -31,6 +31,26 @@ namespace AlgoExpert.Basics
                 }
             }
             Console.WriteLine("Array is empty!!!");
+        }
+
+        // Second solution for  Using HashSet
+        public void TwoNumberSumHashSet(int[] arr, int targerSum)
+        {
+            HashSet<int> hashSet = new HashSet<int>();
+            foreach (var item in arr)
+            {
+                int potentialNumber = targerSum - item;
+                if (hashSet.Contains(potentialNumber))
+                {
+                    int[] result = new int[] { potentialNumber ,item};
+                    foreach (var rs in result)
+                    {
+                        Console.Write(rs + " -- ");
+                    }
+                    return;
+                }
+                hashSet.Add(item);
+            }
         }
     }
 }
