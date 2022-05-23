@@ -32,5 +32,26 @@ namespace AlgoExpert.Basics
                 Console.WriteLine("Your subsequence : "+ item);
             }
         }
+
+        public void CheckSubSequence2(int[] arrary, int[] subsequence)
+        {
+            int seqIdx = 0;
+           
+            List<int> list = new List<int>();
+            foreach (var item in arrary)
+            {
+                if (seqIdx == subsequence.Length) break;
+                if (subsequence[seqIdx]== item)
+                {
+                    list.Add(item);
+                    seqIdx += 1;
+                }
+            }
+
+            foreach (var item in list)
+            {
+                Console.WriteLine("Your subsequence : " + item);
+            }
+        }
     }
 }

@@ -19,6 +19,6 @@ int n = 20;
 //sum.TwoNumberSumHashSet(arr, n);
 
 //sum.TowNumberSumTwoSide(arr, n);
-seq.CheckSubSequence(arr, arr2);
+seq.CheckSubSequence2(arr, arr2);
 
 
