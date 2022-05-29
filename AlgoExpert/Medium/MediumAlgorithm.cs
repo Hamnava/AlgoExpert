@@ -54,15 +54,14 @@ namespace AlgoExpert.Medium
 
             int smallest = Int32.MaxValue;
             int current = Int32.MaxValue;
-            int firstName = 0;
-            int secondName = 0;
 
-            int[] PairResult = new int[] { firstName, secondName };
+
+            int[] PairResult = new int[2];
 
             while (idxOne < arrayOne.Length && idxTwo < arrayTwo.Length)
             {
-                firstName = arrayOne[idxOne];
-                secondName = arrayTwo[idxTwo];
+                int firstName = arrayOne[idxOne];
+                int secondName = arrayTwo[idxTwo];
 
                 if (firstName < secondName)
                 {
