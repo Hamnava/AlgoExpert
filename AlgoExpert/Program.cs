@@ -14,7 +14,9 @@ using AlgoExpert.Medium;
 
 //ValidateSubSequence seq = new ValidateSubSequence();
 
-int[] arr = new int[] { -1, 1, 2, 3,5, -6,-8, 12, -3,  8, 11 };
+int[] arr = new int[] { -1, 1, 2, 3,5, -64, 123, -35, 112 };
+int[] arr2 = new int[] { 13, -6,-8, 12, -3,  8, 11 };
+
 //int[] arr2 = new int[] { -1, 12, -3, };
 //int n = 20;
 ////sum.TwoNumberSum(arr, n);
@@ -27,5 +29,6 @@ int[] arr = new int[] { -1, 1, 2, 3,5, -6,-8, 12, -3,  8, 11 };
 #region Medium
 MediumAlgorithm medium = new MediumAlgorithm();
 
-medium.ThreeNumberSum(arr,0);
+//medium.ThreeNumberSum(arr,0);
+medium.SmallestDefference(arr, arr2);
 #endregion

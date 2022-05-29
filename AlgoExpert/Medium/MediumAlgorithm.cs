@@ -8,6 +8,7 @@ namespace AlgoExpert.Medium
 {
     public class MediumAlgorithm
     {
+        // Time O(n^2) and spanc O(n)
         public void ThreeNumberSum(int[] array, int targetSum)
         {
             Array.Sort(array);
@@ -28,7 +29,7 @@ namespace AlgoExpert.Medium
                         right--;
                     }
                     else if (currentSum < targetSum) left++;
-                    else if(currentSum > targetSum) right--;
+                    else if (currentSum > targetSum) right--;
 
                 }
             }
@@ -41,6 +42,52 @@ namespace AlgoExpert.Medium
                 }
                 Console.WriteLine();
             }
+        }
+
+        public void SmallestDefference(int[] arrayOne, int[] arrayTwo)
+        {
+            Array.Sort(arrayOne);
+            Array.Sort(arrayTwo);
+
+            int idxOne = 0;
+            int idxTwo = 0;
+
+            int smallest = Int32.MaxValue;
+            int current = Int32.MaxValue;
+            int firstName = 0;
+            int secondName = 0;
+
+            int[] PairResult = new int[] { firstName, secondName };
+
+            while (idxOne < arrayOne.Length && idxTwo < arrayTwo.Length)
+            {
+                firstName = arrayOne[idxOne];
+                secondName = arrayTwo[idxTwo];
+
+                if (firstName < secondName)
+                {
+                    current = secondName - firstName;
+                    idxOne++;
+                }
+                else if (firstName > secondName)
+                {
+                    current = firstName - secondName;
+                    idxTwo++;
+                }
+                else
+                {
+                    PairResult = new int[] { firstName, secondName };
+                    Console.WriteLine(firstName + " <--> " + secondName + " : " + 0);
+                    return;
+                }
+                if (smallest > current)
+                {
+                    smallest = current;
+                    PairResult = new int[] { firstName, secondName };
+                    Console.WriteLine(firstName + " <--> " + secondName + " : " + smallest);
+                }
+            }
+         
         }
     }
 }
