@@ -44,6 +44,8 @@ namespace AlgoExpert.Medium
             }
         }
 
+
+        // Time O(nlog(n) + mlog(m)) and space O(1) constant
         public void SmallestDefference(int[] arrayOne, int[] arrayTwo)
         {
             Array.Sort(arrayOne);
