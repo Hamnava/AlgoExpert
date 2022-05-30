@@ -91,6 +91,30 @@ namespace AlgoExpert.Medium
          
         }
 
+        // Time O(n) and space O(1) constant for move an element to the end of array
+        public void MoveElementTotheEnd(int[] array, int element)
+        {
+            int i = 0;
+            int j = array.Length - 1;
 
+            while (i< j)
+            {
+                while (i < j && array[j] == element)
+                {
+                    j--;
+                }
+                if (array[i]== element)
+                {
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+                i++;
+            }
+            foreach (var item in array)
+            {
+                Console.Write(item + " <--> ");
+            }
+        }
     }
 }
