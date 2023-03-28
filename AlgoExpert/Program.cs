@@ -7,25 +7,32 @@
 
 using AlgoExpert.Basics;
 using AlgoExpert.Medium;
+using System.ComponentModel.DataAnnotations;
+
+
+#region Basic
+
+
+#region towNumberSum
+//TowNumberSum sum = new TowNumberSum();
+
+//int[] arr2 = new int[] { 13, -6, -8, 12, -3, 8, 11 };
+//int n = 20;
+//sum.twoNumberSumPointer(arr2, n);
+#endregion
+
+#region Validate Subsequence
+var subSequence = new ValidateSubSequence();
+int[] arr = new int[] { 13, -6, -8, 12, -1, 7, -3, 8, 11 };
+int[] sub = new int[] { -6, 12, -1, 8, 11 };
+subSequence.validateSubSequence(arr, sub);
+
+#endregion
+
+#endregion
 
 
 
-TowNumberSum sum = new TowNumberSum();
-
-
-
-//int[] arr = new int[] { -1, 1, 2, 3,5, -64, 123, -35, 112 };
-int[] arr2 = new int[] { 13, -6,-8, 12, -3,  8, 11 };
-//int[] array = new int[] { 2, 1, 3, 2, 2, 2, 4, 2 };
-
-//int[] arr2 = new int[] { -1, 12, -3, };
-int n = 20;
-sum.twoNumberSumPointer(arr2, n);
-
-////sum.TwoNumberSumHashSet(arr, n);
-
-////sum.TowNumberSumTwoSide(arr, n);
-//seq.CheckSubSequence2(arr, arr2);
 
 #region Medium
 MediumAlgorithm medium = new MediumAlgorithm();

@@ -8,50 +8,37 @@ namespace AlgoExpert.Basics
 {
     public class ValidateSubSequence
     {
-        public void CheckSubSequence(int[] arrary, int[] subsequence)
+
+        // O(N) time, O(1) space
+        public bool validateSubSequence(int[] array, int[] subAarry)
         {
-            int arraryIdx = 0;
-            int subsequenceIdx = 0;
-            List<int> list = new List<int>();
+            var arrIdx = 0;
+            var subArIdx = 0;
 
-            while (arraryIdx < arrary.Length && subsequenceIdx < subsequence.Length)
+            while (arrIdx < array.Length && subArIdx < subAarry.Length)
             {
-                if (subsequence[subsequenceIdx] == arrary[arraryIdx])
+                if (array[arrIdx] == subAarry[subArIdx])
                 {
-                    list.Add(subsequence[subsequenceIdx]);
-                    subsequenceIdx += 1;
+                    subArIdx++;
                 }
-                else
-                {
-                    arraryIdx += 1;
-                }
+                arrIdx++;
             }
-
-            foreach (var item in list)
-            {
-                Console.WriteLine("Your subsequence : "+ item);
-            }
+            Console.WriteLine(subArIdx == subAarry.Length);
+            return subArIdx == subAarry.Length;
         }
 
-        public void CheckSubSequence2(int[] arrary, int[] subsequence)
-        {
-            int seqIdx = 0;
-           
-            List<int> list = new List<int>();
-            foreach (var item in arrary)
-            {
-                if (seqIdx == subsequence.Length) break;
-                if (subsequence[seqIdx]== item)
-                {
-                    list.Add(item);
-                    seqIdx += 1;
-                }
-            }
 
-            foreach (var item in list)
+        // O(N) time, O(1) space
+        public bool validateSubSequenceForLoop(int[] array, int[] subAarry)
+        {
+            var subIdx = 0;
+            foreach (var item in array)
             {
-                Console.WriteLine("Your subsequence : " + item);
+                if (subIdx == subAarry.Length) break;
+
+                if(item == subAarry[subIdx]) subIdx++;
             }
+            return subIdx == subAarry.Length;
         }
     }
 }
