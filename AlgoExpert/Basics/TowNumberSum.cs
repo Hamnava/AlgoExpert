@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,76 +9,76 @@ namespace AlgoExpert.Basics
 {
     public class TowNumberSum
     {
-       
+
         // My Solution without AlgoExpert
-       public void TwoNumberSum(int[] arr, int n)
+
+
+        // O(n^2) time, O(1) space
+        public int[] towNumberSum(int[] array, int target)
         {
-            if (arr.Length > 0)
+            for (int i = 0; i < array.Length; i++)
             {
-                for (int i = 0; i < arr.Length; i++)
+                var firstNum = array[i];
+
+                for (int j = i + 1; j < array.Length; j++)
                 {
-                    for (int j = i+1; j < arr.Length; j++)
+                    var secondNum = array[j];
+
+                    if (firstNum + secondNum == target)
                     {
-                        if (arr[i] + arr[j] == n)
-                        {
-                           int[] result = new int[] { arr[i], arr[j] };
-                            foreach (var item in result)
-                            {
-                                Console.Write(item + " -- ");
-                            }
-                            return;
-                        }
+                        Console.WriteLine("FirstNum: " + firstNum + " Second Num: " + secondNum);
+                        return new int[] { firstNum, secondNum };
                     }
                 }
             }
-            Console.WriteLine("Array is empty!!!");
+
+            return new int[0];
         }
 
-        // Second solution for  Using HashSet
-        public void TwoNumberSumHashSet(int[] arr, int targerSum)
+
+        // O(n) time, O(n) space
+        public int[] towNumberSumHas(int[] array, int target)
         {
-            HashSet<int> hashSet = new HashSet<int>();
-            foreach (var item in arr)
+            var hashtable = new Hashtable();
+            foreach (var item in array)
             {
-                int potentialNumber = targerSum - item;
-                if (hashSet.Contains(potentialNumber))
+                var potentialMatch = target - item;
+                if (hashtable.Contains(potentialMatch))
                 {
-                    int[] result = new int[] { potentialNumber ,item};
-                    foreach (var rs in result)
-                    {
-                        Console.Write(rs + " -- ");
-                    }
-                    return;
+                    Console.WriteLine("FirstNum: " + potentialMatch + " Second Num: " + item);
+                    return new int[] { potentialMatch, item };
                 }
-                hashSet.Add(item);
+                else
+                {
+                    hashtable.Add(item, true);
+                }
             }
+            return new int[0];
         }
 
-        public void TowNumberSumTwoSide(int[] arr, int targetSum)
+
+        public int[] twoNumberSumPointer(int[] array, int target)
         {
-            Array.Sort(arr);
-            int left = 0;
-            int right = arr.Length - 1;
+            Array.Sort(array);
+
+            var left = 0;
+            var right = array.Length - 1;
 
             while (left < right)
             {
-                int curretnsum = arr[left] + arr[right];
-                if (curretnsum == targetSum)
+                var currentSum = array[left] + array[right];
+                if (currentSum == target)
                 {
-                    int[] result = new int[] { arr[left], arr[right] };
-                    foreach (var rs in result)
-                    {
-                        Console.Write(rs + " -- ");
-                    }
-                    return;
+                    Console.WriteLine("FirstNum: " + array[left] + " Second Num: " + array[right]);
+                    return new int[] { array[left], array[right] };
                 }
-                else if (curretnsum < targetSum) left++;
+                else if(currentSum < target) left++;
                 else right--;
             }
 
+            return new int[0];
         }
 
-    
     }
 }
 

@@ -10,17 +10,17 @@ using AlgoExpert.Medium;
 
 
 
-//TowNumberSum sum = new TowNumberSum();
+TowNumberSum sum = new TowNumberSum();
 
-//ValidateSubSequence seq = new ValidateSubSequence();
 
-int[] arr = new int[] { -1, 1, 2, 3,5, -64, 123, -35, 112 };
+
+//int[] arr = new int[] { -1, 1, 2, 3,5, -64, 123, -35, 112 };
 int[] arr2 = new int[] { 13, -6,-8, 12, -3,  8, 11 };
-int[] array = new int[] { 2, 1, 3, 2, 2, 2, 4, 2 };
+//int[] array = new int[] { 2, 1, 3, 2, 2, 2, 4, 2 };
 
 //int[] arr2 = new int[] { -1, 12, -3, };
-//int n = 20;
-////sum.TwoNumberSum(arr, n);
+int n = 20;
+sum.twoNumberSumPointer(arr2, n);
 
 ////sum.TwoNumberSumHashSet(arr, n);
 
@@ -31,7 +31,7 @@ int[] array = new int[] { 2, 1, 3, 2, 2, 2, 4, 2 };
 MediumAlgorithm medium = new MediumAlgorithm();
 
 //medium.ThreeNumberSum(arr,0);
-medium.SmallestDefference(arr, arr2);
+//medium.SmallestDefference(arr, arr2);
 
-medium.MoveElementTotheEnd(array, 2);
+//medium.MoveElementTotheEnd(array, 2);
 #endregion
